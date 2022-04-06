@@ -23,7 +23,6 @@ namespace MorseTranslator
             Array array = chaine.ToCharArray();
             foreach (char c in array)
             {
-                Console.WriteLine(c);
                 foreach (Morse morse in code)
                 {
                     if(morse.GetLettre() == c)
