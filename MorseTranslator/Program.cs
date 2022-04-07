@@ -10,11 +10,13 @@ namespace MorseTranslator
     {
         static void Main(string[] args)
         {
-            string message = Console.ReadLine();
-            //GestionMorse gestion = new GestionMorse();
-            GestionMorse gestion = new GestionMorse();
-            gestion.Transalte(message);
-            Console.ReadLine();
+            while (true)
+            {
+                string message = Console.ReadLine();
+                //GestionMorse gestion = new GestionMorse();
+                GestionMorse gestion = new GestionMorse();
+                gestion.Transalte(message);
+            }
         }
     }
 }
