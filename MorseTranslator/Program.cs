@@ -10,13 +10,17 @@ namespace MorseTranslator
     {
         static void Main(string[] args)
         {
-            while (true)
+            string message = "";
+            GestionMorse gestion = new GestionMorse();
+            do
             {
-                string message = Console.ReadLine();
-                //GestionMorse gestion = new GestionMorse();
-                GestionMorse gestion = new GestionMorse();
-                gestion.Transalte(message);
-            }
+                Console.WriteLine("Entrez un message à traduire en morse (§end pour stoper le programme)");
+                message = Console.ReadLine();
+                if (message != "§end")
+                {
+                    gestion.Transalte(message);
+                }
+            } while (message != "§end");
         }
     }
 }

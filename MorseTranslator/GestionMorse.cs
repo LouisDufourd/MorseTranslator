@@ -8,7 +8,7 @@ namespace MorseTranslator
 {
     class GestionMorse
     {
-        public Morse [] code = new Morse[26];
+        public Morse [] code = new Morse[36];
 
         public GestionMorse()
         {
@@ -172,10 +172,87 @@ namespace MorseTranslator
             lettres[2] = 100;
             lettres[3] = 100;
             code[25] = new Morse('z', lettres, 770);
-            //space
-            lettres = new int[1];
-            lettres[0] = 700;
-            code[21] = new Morse(' ', lettres, 770);
+            //1
+            lettres = new int[5];
+            lettres[0] = 100;
+            lettres[1] = 300;
+            lettres[2] = 300;
+            lettres[3] = 300;
+            lettres[4] = 300;
+            code[26] = new Morse('1', lettres, 770);
+            //2
+            lettres = new int[5];
+            lettres[0] = 100;
+            lettres[1] = 100;
+            lettres[2] = 300;
+            lettres[3] = 300;
+            lettres[4] = 300;
+            code[27] = new Morse('2', lettres, 770);
+            //3
+            lettres = new int[5];
+            lettres[0] = 100;
+            lettres[1] = 100;
+            lettres[2] = 100;
+            lettres[3] = 300;
+            lettres[4] = 300;
+            code[28] = new Morse('3', lettres, 770);
+            //4
+            lettres = new int[5];
+            lettres[0] = 100;
+            lettres[1] = 100;
+            lettres[2] = 100;
+            lettres[3] = 100;
+            lettres[4] = 300;
+            code[29] = new Morse('4', lettres, 770);
+            //5
+            lettres = new int[5];
+            lettres[0] = 100;
+            lettres[1] = 100;
+            lettres[2] = 100;
+            lettres[3] = 100;
+            lettres[4] = 100;
+            code[30] = new Morse('5', lettres, 770);
+            //6
+            lettres = new int[5];
+            lettres[0] = 300;
+            lettres[1] = 100;
+            lettres[2] = 100;
+            lettres[3] = 100;
+            lettres[4] = 100;
+            code[31] = new Morse('6', lettres, 770);
+            //7
+            lettres = new int[5];
+            lettres[0] = 300;
+            lettres[1] = 300;
+            lettres[2] = 100;
+            lettres[3] = 100;
+            lettres[4] = 100;
+            code[32] = new Morse('7', lettres, 770);
+            //8
+            lettres = new int[5];
+            lettres[0] = 300;
+            lettres[1] = 300;
+            lettres[2] = 300;
+            lettres[3] = 100;
+            lettres[4] = 100;
+            code[33] = new Morse('8', lettres, 770);
+            //9
+            lettres = new int[5];
+            lettres[0] = 300;
+            lettres[1] = 300;
+            lettres[2] = 300;
+            lettres[3] = 100;
+            lettres[4] = 100;
+            code[34] = new Morse('9', lettres, 770);
+            //0
+            lettres = new int[5];
+            lettres[0] = 300;
+            lettres[1] = 300;
+            lettres[2] = 300;
+            lettres[3] = 300;
+            lettres[4] = 300;
+            code[35] = new Morse('0', lettres, 770);
+
         }
 
         public void Transalte(string chaine)
@@ -191,11 +268,19 @@ namespace MorseTranslator
                         for (int k = 0; k < dure.Length; k++)
                         {
                             Console.WriteLine(dure[k]);
-                            //Console.Beep(code[j].GetFrequence(), dure[k]);
+                            Console.Beep(code[j].GetFrequence(), dure[k]);
                         }
-                        if(code[j + 1].GetLettre() != ' ' && code[j+1] != code[j])
+                        if((j + 1) != code.Length) 
                         {
-                            Console.WriteLine("300");
+                            if(code[j + 1].GetLettre() != ' ' )
+                            {
+                                Console.Beep(770, 300);
+                                Console.WriteLine("300");
+                            } else
+                            {
+                                Console.Beep(770, 700);
+                                Console.WriteLine("700");
+                            }
                         }
                     }
                 }
